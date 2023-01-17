@@ -1,0 +1,69 @@
+POST  http://localhost:3000/signup
+Content-Type: application/json
+
+{
+  "name": "Developer",
+  "email": "123@yandex.ru",
+  "password": "test"
+}
+
+###
+
+POST  http://localhost:3000/signin
+Content-Type: application/json
+
+{
+  "email": "1234@yandex.ru",
+  "password": "test"
+}
+
+###
+
+GET http://localhost:3000/users/me
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2M1YTBiOTA2ZTBmNTUzNThhZjI3ODEiLCJpYXQiOjE2NzM4OTYyODQsImV4cCI6MTY3NDUwMTA4NH0.VEnoslRtis7LR5sb4RRnt7EJOW5UwEmZT0GOIY-FX-M
+
+###
+
+PATCH http://localhost:3000/users/me
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2M1YTBiOTA2ZTBmNTUzNThhZjI3ODEiLCJpYXQiOjE2NzM4OTYyODQsImV4cCI6MTY3NDUwMTA4NH0.VEnoslRtis7LR5sb4RRnt7EJOW5UwEmZT0GOIY-FX-M
+
+{
+  "name": "Oleg",
+  "email": "1234@yandex.ru"
+}
+
+###
+
+
+GET http://localhost:3000/movies
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2M1YTBiOTA2ZTBmNTUzNThhZjI3ODEiLCJpYXQiOjE2NzM4OTYyODQsImV4cCI6MTY3NDUwMTA4NH0.VEnoslRtis7LR5sb4RRnt7EJOW5UwEmZT0GOIY-FX-M
+
+###
+
+POST  http://localhost:3000/movies
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2M1YTBiOTA2ZTBmNTUzNThhZjI3ODEiLCJpYXQiOjE2NzM4OTYyODQsImV4cCI6MTY3NDUwMTA4NH0.VEnoslRtis7LR5sb4RRnt7EJOW5UwEmZT0GOIY-FX-M
+
+{
+  "country": "США",
+  "director": "Стивен Кайак",
+  "duration": 61,
+  "year": "2010",
+  "description": "В конце 1960-х группа «Роллинг Стоунз», несмотря на все свои мегахиты и сверхуспешные концертные туры, была разорена. Виной всему — бездарный менеджмент и драконовское налогообложение в Британии. Тогда музыканты приняли не самое простое для себя решение: летом 1971 года после выхода альбома «Stiсky Fingers» они отправились на юг Франции записывать новую пластинку. Именно там, на Лазурном Берегу, в арендованном Китом Ричардсом подвале виллы Неллькот родился сборник «Exile on Main St.», который стал лучшим альбомом легендарной группы.",
+  "image": "https://www.filmposters.com/images/posters/19471.jpg",
+  "trailerLink": "https://www.youtube.com/watch?v=UXcqcdYABFw",
+  "thumbnail": "https://www.filmposters.com/images/posters/19471.jpg",
+  "movieId": "1",
+  "nameRU": "«Роллинг Стоунз» в изгнании",
+  "nameEN": "Stones in Exile"
+}
+
+###
+
+DELETE http://localhost:3000/movies/63c5ae2d21d054d4e46c3478
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2M1YTBiOTA2ZTBmNTUzNThhZjI3ODEiLCJpYXQiOjE2NzM4OTYyODQsImV4cCI6MTY3NDUwMTA4NH0.VEnoslRtis7LR5sb4RRnt7EJOW5UwEmZT0GOIY-FX-M
+###
