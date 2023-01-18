@@ -1,5 +1,7 @@
 const { celebrate, Joi } = require('celebrate');
-const { linkRegex } = require('./constants');
+const { regexes } = require('./constants');
+
+const { linkRegex } = regexes;
 
 const emailPasswordValidator = celebrate({
   body: Joi.object()
@@ -84,41 +86,20 @@ const cardInfoValidator = celebrate({
     }),
 });
 
-// const userAvatarValidator = celebrate({
-//   body: Joi.object()
-//     .keys({
-//       avatar: Joi.string()
-//         .pattern(linkRegex)
-//         .required(),
-//     }),
-// });
-//
-// const cardIdValidator = celebrate({
-//   params: Joi.object()
-//     .keys({
-//       cardId: Joi.string()
-//         .hex()
-//         .length(24)
-//         .required(),
-//     }),
-// });
-//
-// const cardNameLinkValidator = celebrate({
-//   body: Joi.object()
-//     .keys({
-//       name: Joi.string()
-//         .min(2)
-//         .max(30)
-//         .required(),
-//       link: Joi.string()
-//         .pattern(linkRegex)
-//         .required(),
-//     }),
-// });
+const movieIdValidator = celebrate({
+  params: Joi.object()
+    .keys({
+      movieId: Joi.string()
+        .hex()
+        .length(24)
+        .required(),
+    }),
+});
 
 module.exports = {
   emailPasswordValidator,
   userDataValidator,
   userNameEmailValidator,
   cardInfoValidator,
+  movieIdValidator,
 };

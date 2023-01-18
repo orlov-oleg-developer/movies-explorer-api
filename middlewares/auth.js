@@ -4,6 +4,12 @@ const { JWT_SECRET } = require('../config/server-config');
 
 const NoAuthError = require('../errors/no-auth-error');
 
+const { messages } = require('../utils/constants');
+
+const {
+  authorizationRequiredMessage,
+} = messages;
+
 const checkToken = (token) => {
   const YOUR_JWT = token;
   const SECRET_KEY_DEV = 'some-secret-key';
@@ -36,7 +42,7 @@ module.exports = (req, res, next) => {
 
   try {
     if (!authorization || !authorization.startsWith('Bearer ')) {
-      next(new NoAuthError('Необходима авторизация'));
+      next(new NoAuthError(authorizationRequiredMessage));
       return;
     }
 
@@ -46,6 +52,6 @@ module.exports = (req, res, next) => {
     req.user = payload;
     next();
   } catch (e) {
-    next(new NoAuthError('Необходима авторизация'));
+    next(new NoAuthError(authorizationRequiredMessage));
   }
 };

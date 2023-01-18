@@ -5,6 +5,12 @@ const {
   userDataValidator,
 } = require('../utils/requests-validators');
 
+const { messages } = require('../utils/constants');
+
+const {
+  pageNotFoundMessage,
+} = messages;
+
 const {
   login,
   createUser,
@@ -31,7 +37,7 @@ router.use(auth);
 router.use('/users', usersRoutes);
 router.use('/movies', moviesRoutes);
 router.use((req, res, next) => {
-  next(new NotFoundError('Страница не найена'));
+  next(new NotFoundError(pageNotFoundMessage));
 });
 
 module.exports = router;

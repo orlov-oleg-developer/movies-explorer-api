@@ -5,6 +5,13 @@ const NotFoundError = require('../errors/not-found-error');
 const BadRequestError = require('../errors/bad-request-error');
 const ForbiddenError = require('../errors/forbidden-error');
 
+const { messages } = require('../utils/constants');
+
+const {
+  incorrectMovieIdMessage,
+  noAccessMessage,
+} = messages;
+
 const statusCode = {
   success: 200,
   created: 201,
@@ -66,13 +73,13 @@ const deleteMovie = async (req, res, next) => {
   try {
     const movie = await Movie.findById(movieId);
     if (!movie) {
-      throw new NotFoundError('Фильм с указанным _id не найден');
+      throw new NotFoundError(incorrectMovieIdMessage);
     }
 
     const movieOwnerId = String(movie.owner);
 
     if (userId !== movieOwnerId) {
-      throw new ForbiddenError('У вас нет доступа к удалению этой карточки');
+      throw new ForbiddenError(noAccessMessage);
     }
 
     await movie.remove();

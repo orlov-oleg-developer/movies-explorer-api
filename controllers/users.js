@@ -3,6 +3,13 @@ const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
 
 const { JWT_SECRET } = require('../config/server-config');
+const { messages } = require('../utils/constants');
+
+const {
+  notFoundMessage,
+  incorrectData,
+  incorrectPasswordOrLoginMessage,
+} = messages;
 
 const User = require('../models/user');
 const NotFoundError = require('../errors/not-found-error');
@@ -22,7 +29,7 @@ const option = {
 
 const checkUser = (user) => {
   if (user === null) {
-    throw new NotFoundError('Нет пользователя с таким id');
+    throw new NotFoundError(notFoundMessage);
   }
 };
 
@@ -48,7 +55,7 @@ const createUser = async (req, res, next) => {
     }
 
     if (e.code === 11000) {
-      return next(new ConflictError('Переданы некорректные данные при создании пользователя'));
+      return next(new ConflictError(incorrectData));
     }
     return next(e);
   }
@@ -60,12 +67,12 @@ const login = async (req, res, next) => {
   try {
     const user = await User.findOne({ email }).select('+password');
     if (!user) {
-      throw new NoAuthError('Неправильные почта или пароль');
+      throw new NoAuthError(incorrectPasswordOrLoginMessage);
     }
 
     const match = await bcrypt.compare(password, user.password);
     if (!match) {
-      throw new NoAuthError('Неправильные почта или пароль');
+      throw new NoAuthError(incorrectPasswordOrLoginMessage);
     }
 
     const token = jwt.sign(

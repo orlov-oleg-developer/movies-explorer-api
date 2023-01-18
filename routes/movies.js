@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 const {
-  cardInfoValidator,
+  cardInfoValidator, movieIdValidator,
 } = require('../utils/requests-validators');
 
 const {
@@ -16,6 +16,10 @@ router.post(
   cardInfoValidator,
   createMovie,
 );
-router.delete('/:movieId', deleteMovie);
+router.delete(
+  '/:movieId',
+  movieIdValidator,
+  deleteMovie,
+);
 
 module.exports = router;
