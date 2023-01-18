@@ -19,7 +19,7 @@ app.use(helmet());
 app.use(express.json());
 app.use(cors());
 
-app.use('/', rootRoutes);
+app.use('/api', rootRoutes);
 
 app.use(errorLogger);
 
