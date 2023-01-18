@@ -1,15 +1,15 @@
-POST  http://localhost:3000/signup
+POST  https://api.movies.developer.nomoredomains.rocks/signup
 Content-Type: application/json
 
 {
   "name": "Developer",
-  "email": "123@yandex.ru",
+  "email": "1234@yandex.ru",
   "password": "test"
 }
 
 ###
 
-POST  http://localhost:3000/signin
+POST  https://api.movies.developer.nomoredomains.rocks/signin
 Content-Type: application/json
 
 {
@@ -19,33 +19,33 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:3000/users/me
+GET https://api.movies.developer.nomoredomains.rocks/users/me
 Accept: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2M1YTBiOTA2ZTBmNTUzNThhZjI3ODEiLCJpYXQiOjE2NzM4OTYyODQsImV4cCI6MTY3NDUwMTA4NH0.VEnoslRtis7LR5sb4RRnt7EJOW5UwEmZT0GOIY-FX-M
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2M2ZjlhZmYzMmE1Y2FlNTRhMzE5MmQiLCJpYXQiOjE2NzM5ODQ0MzYsImV4cCI6MTY3NDU4OTIzNn0.N7o4X_rWpjCFVu10aiEfcx83ApoFU09xsqVN5W4fm9M
 
 ###
 
-PATCH http://localhost:3000/users/me
+PATCH https://api.movies.developer.nomoredomains.rocks/users/me
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2M1YTBiOTA2ZTBmNTUzNThhZjI3ODEiLCJpYXQiOjE2NzM4OTYyODQsImV4cCI6MTY3NDUwMTA4NH0.VEnoslRtis7LR5sb4RRnt7EJOW5UwEmZT0GOIY-FX-M
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2M2ZjlhZmYzMmE1Y2FlNTRhMzE5MmQiLCJpYXQiOjE2NzM5ODQ0MzYsImV4cCI6MTY3NDU4OTIzNn0.N7o4X_rWpjCFVu10aiEfcx83ApoFU09xsqVN5W4fm9M
 
 {
   "name": "Oleg",
-  "email": "1234@yandex.ru"
+  "email": "1235@yandex.ru"
 }
 
 ###
 
 
-GET http://localhost:3000/movies
+GET https://api.movies.developer.nomoredomains.rocks/movies
 Accept: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2M1YTBiOTA2ZTBmNTUzNThhZjI3ODEiLCJpYXQiOjE2NzM4OTYyODQsImV4cCI6MTY3NDUwMTA4NH0.VEnoslRtis7LR5sb4RRnt7EJOW5UwEmZT0GOIY-FX-M
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2M2ZjlhZmYzMmE1Y2FlNTRhMzE5MmQiLCJpYXQiOjE2NzM5ODQ0MzYsImV4cCI6MTY3NDU4OTIzNn0.N7o4X_rWpjCFVu10aiEfcx83ApoFU09xsqVN5W4fm9M
 
 ###
 
-POST  http://localhost:3000/movies
+POST  https://api.movies.developer.nomoredomains.rocks/movies
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2M1YTBiOTA2ZTBmNTUzNThhZjI3ODEiLCJpYXQiOjE2NzM4OTYyODQsImV4cCI6MTY3NDUwMTA4NH0.VEnoslRtis7LR5sb4RRnt7EJOW5UwEmZT0GOIY-FX-M
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2M2ZjlhZmYzMmE1Y2FlNTRhMzE5MmQiLCJpYXQiOjE2NzM5ODQ0MzYsImV4cCI6MTY3NDU4OTIzNn0.N7o4X_rWpjCFVu10aiEfcx83ApoFU09xsqVN5W4fm9M
 
 {
   "country": "США",
@@ -63,7 +63,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2M1YTBiO
 
 ###
 
-DELETE http://localhost:3000/movies/63c5ae2d21d054d4e46c3478
+DELETE https://api.movies.developer.nomoredomains.rocks/movies/63c6fa17f32a5cae54a31934
 Accept: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2M1YTBiOTA2ZTBmNTUzNThhZjI3ODEiLCJpYXQiOjE2NzM4OTYyODQsImV4cCI6MTY3NDUwMTA4NH0.VEnoslRtis7LR5sb4RRnt7EJOW5UwEmZT0GOIY-FX-M
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2M2ZjlhZmYzMmE1Y2FlNTRhMzE5MmQiLCJpYXQiOjE2NzM5ODQ0MzYsImV4cCI6MTY3NDU4OTIzNn0.N7o4X_rWpjCFVu10aiEfcx83ApoFU09xsqVN5W4fm9M
 ###
