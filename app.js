@@ -27,6 +27,8 @@ app.use(errors());
 
 app.use(errorHandler);
 
+mongoose.set('strictQuery', true);
+
 mongoose.connect(MONGO_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -39,3 +41,4 @@ mongoose.connect(MONGO_URL, {
     console.error(err);
   }
 });
+
