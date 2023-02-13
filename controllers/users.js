@@ -46,15 +46,9 @@ const createUser = async (req, res, next) => {
 
     user.password = undefined;
 
-    const token = jwt.sign(
-      { _id: user._id },
-      JWT_SECRET,
-      { expiresIn: '7d' },
-    );
-
     return res
       .status(statusCode.created)
-      .send({ user, token });
+      .send({ user});
   } catch (e) {
     if (e instanceof mongoose.Error.ValidationError) {
       return next(new BadRequestError());
